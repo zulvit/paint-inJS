@@ -1,7 +1,6 @@
 const start_config = {
     'lineSize': 5,
     'color': '#333',
-
 }
 
 window.onload = () => {
@@ -9,7 +8,6 @@ window.onload = () => {
     const ctx = canvas.getContext('2d');
     const indicator = document.getElementById('indicator');
 
-    canvas.requestFullscreen();
     canvas.height = document.body.clientHeight;
     canvas.width = document.body.clientWidth;
 
@@ -23,7 +21,9 @@ window.onload = () => {
         newDraw = false,
         posX = [],
         posY = []
+
     canvas.addEventListener("mousedown", (e) => {
+        console.log('mouse pressed');
         if (isRec) return;
         clearCanvas();
         canvas.onmousemove = (e) => recordMousePos(e);
